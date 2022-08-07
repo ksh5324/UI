@@ -90,14 +90,9 @@ exports["default"] = {
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 var preact_1 = __webpack_require__(/*! preact */ "./node_modules/preact/dist/preact.module.js");
-var Month = /** @class */ (function () {
-    function Month() {
-    }
-    Month.prototype.getComponent = function () {
-        return (0, preact_1.h)("h2", null, "Month View");
-    };
-    return Month;
-}());
+var Month = function () {
+    return (0, preact_1.h)("div", null, "Month View");
+};
 exports["default"] = Month;
 
 

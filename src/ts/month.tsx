@@ -1,7 +1,7 @@
-import { h, JSX } from 'preact';
+import { h } from 'preact';
 
-export default class Month {
-  protected getComponent(): JSX.Element {
-    return <h2>Month View</h2>;
-  }
-}
+const Month = (): any => {
+  return <div>Month View</div>;
+};
+
+export default Month;

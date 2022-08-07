@@ -1,1 +1,0 @@
-{"version":3,"file":"ui.css","mappings":";;;;;;;;;AAAA;EACE,SAAS;EACT,UAAU;EACV,sBAAsB","sources":["webpack://tui.Calendar/./src/sass/index.scss"],"sourcesContent":["* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}\n"],"names":[],"sourceRoot":""}

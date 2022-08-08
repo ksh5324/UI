@@ -1,13 +1,13 @@
 import React from "react";
 import Button from "../button/Button";
-import Card from "./Card";
+import Item from "./Item";
 
 export default {
-  component: Card,
-  title: "Card",
+  component: Item,
+  title: "Item",
 };
 
-const Template = (args) => <Card {...args} />;
+const Template = (args) => <Item {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -36,4 +36,21 @@ Default.args = {
       />
     </>
   ),
+};
+
+export const Check = Template.bind({});
+Check.args = {
+  type: "check",
+  title: "title",
+  description: "descripalsdfjlskdf",
+  tag: ["#tag", "#tag"],
+  good: 1000,
+  checked: true,
+};
+
+export const Star = Template.bind({});
+Star.args = {
+  type: "star",
+  score: 3,
+  description: "descriptioasdfljsn",
 };

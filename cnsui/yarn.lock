@@ -1826,6 +1826,21 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@ksh5324/design-system@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@ksh5324/design-system/-/design-system-0.1.0.tgz#5778f54c936f2a9631b332509292ac8bd2ebdbb3"
+  integrity sha512-FrL/+tZcK6wgXdH4/XTar3WhGCdBWzJGcyT0pDN1l9xFZfZXx8ANUr9d8QnnlXUDTAo6x+XbYn2rGMtNAhuVyg==
+  dependencies:
+    "@reduxjs/toolkit" "^1.8.3"
+    "@testing-library/jest-dom" "^5.14.1"
+    "@testing-library/react" "^13.0.0"
+    "@testing-library/user-event" "^13.2.1"
+    react "^18.1.0"
+    react-dom "^18.1.0"
+    react-redux "^8.0.2"
+    react-scripts "5.0.1"
+    web-vitals "^2.1.0"
+
 "@leichtgewicht/ip-codec@^2.0.1":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"

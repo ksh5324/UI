@@ -37,15 +37,15 @@ const ButtonGroup = ({
   );
 };
 
-const ButtonGroupStyle = styled.div`
+const ButtonGroupStyle = styled.span`
   div {
     display: flex;
     flex-direction: ${(prop) => prop.slot};
   }
-  .marginLeft div + div {
+  .marginLeft span + span {
     margin-left: ${(prop) => prop.defaultValue};
   }
-  .marginTop div + div {
+  .marginTop span + span {
     margin-top: ${(prop) => prop.defaultValue};
   }
 

@@ -44,7 +44,7 @@ Button.defaultProps = {
   size: "medium",
 };
 
-const ButtonStyle = styled.div`
+const ButtonStyle = styled.span`
   button {
     outline: none;
     border: none;

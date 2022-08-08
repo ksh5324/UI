@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../button/Button";
 import Item from "./Item";
+import "./item.css";
 
 export default {
   component: Item,

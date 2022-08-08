@@ -17,6 +17,7 @@ Default.args = {
   rounded: true,
   size: "small",
   shadow: false,
+  onClick: () => {},
 };
 
 export const Error = Template.bind({});
@@ -27,6 +28,7 @@ Error.args = {
   rounded: false,
   size: "small",
   shadow: false,
+  onClick: () => {},
 };
 
 export const Nomal = Template.bind({});
@@ -37,6 +39,7 @@ Nomal.args = {
   rounded: false,
   size: "small",
   shadow: false,
+  onClick: () => {},
 };
 
 export const Outlined = Template.bind({});
@@ -47,6 +50,7 @@ Outlined.args = {
   rounded: false,
   size: "small",
   shadow: false,
+  onClick: () => {},
 };
 
 export const Not = Template.bind({});
@@ -57,6 +61,7 @@ Not.args = {
   rounded: false,
   size: "small",
   shadow: true,
+  onClick: () => {},
 };
 
 export const Rounded = Template.bind({});
@@ -67,6 +72,7 @@ Rounded.args = {
   rounded: true,
   size: "small",
   shadow: false,
+  onClick: () => {},
 };
 
 export const Middle = Template.bind({});
@@ -77,6 +83,7 @@ Middle.args = {
   rounded: true,
   size: "middle",
   shadow: false,
+  onClick: () => {},
 };
 
 export const Large = Template.bind({});
@@ -87,6 +94,7 @@ Large.args = {
   rounded: true,
   size: "large",
   shadow: false,
+  onClick: () => {},
 };
 
 export const Shadow = Template.bind({});
@@ -97,4 +105,5 @@ Shadow.args = {
   rounded: true,
   size: "large",
   shadow: true,
+  onClick: () => {},
 };

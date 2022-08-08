@@ -64,10 +64,17 @@ const ButtonStyle = styled.span`
     &:disabled {
       cursor: not-allowed;
     }
+    svg {
+      width: 1em;
+      margin-right: 1em;
+    }
   }
   .secondary {
     background: #e9ecef;
     color: #343a40;
+    svg {
+      fill: #343a40;
+    }
     &:hover:enabled {
       background: #f1f3f5;
     }
@@ -81,6 +88,9 @@ const ButtonStyle = styled.span`
   .primary {
     background: #20c997;
     color: white;
+    svg {
+      fill: white;
+    }
     &:hover:enabled {
       background: #38d9a9;
     }
@@ -89,11 +99,17 @@ const ButtonStyle = styled.span`
     }
     &:disabled {
       background: #aed9cc;
+      svg {
+        fill: #c6d3e1;
+      }
     }
   }
   .tertiary {
     background: none;
     color: #20c997;
+    svg {
+      fill: #20c997;
+    }
     &:hover:enabled {
       background: #e6fcf5;
     }
@@ -102,6 +118,9 @@ const ButtonStyle = styled.span`
     }
     &:disabled {
       color: #bcd9d0;
+      svg {
+        fill: #bcd9d0;
+      }
     }
   }
   .small {

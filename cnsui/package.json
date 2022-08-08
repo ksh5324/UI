@@ -1,17 +1,14 @@
 {
-  "name": "intro-storybook-react-template",
+  "name": "@ksh5324/design-system",
   "version": "0.1.0",
-  "description": "Starter template to get up and running quickly with React and Storybook",
-  "author": "Chromatic <https://chromatic.com/>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chromaui/intro-storybook-react-template"
-  },
+  "description": "dgsw cns design system",
+  "author": "https://www.chromatic.com/builds?appId=62efecd1d7a33abd903ac013",
+  "repository": "https://github.com/ksh5324/UI",
   "bugs": {
     "url": "https://github.com/chromaui/intro-storybook-react-template/issues"
   },
   "license": "MIT",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
     "@testing-library/jest-dom": "^5.14.1",
@@ -25,7 +22,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
@@ -62,6 +59,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/cli": "^7.18.10",
     "@storybook/addon-actions": "^6.5.7",
     "@storybook/addon-essentials": "^6.5.7",
     "@storybook/addon-interactions": "^6.5.7",
@@ -73,8 +71,10 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.7",
     "@storybook/testing-library": "^0.0.11",
+    "auto": "^10.37.4",
     "babel-plugin-named-exports-order": "^0.0.2",
     "chromatic": "^6.7.3",
+    "cross-env": "^7.0.3",
     "msw": "^0.42.0",
     "msw-storybook-addon": "^1.6.3",
     "prop-types": "^15.8.1",
@@ -82,5 +82,16 @@
   },
   "msw": {
     "workerDirectory": "public"
-  }
+  },
+  "babel": {
+    "presets": [
+      [
+        "react-app",
+        {
+          "absoluteRuntime": false
+        }
+      ]
+    ]
+  },
+  "main": "dist/index.js"
 }

@@ -7,6 +7,7 @@ import HeartSvg from "../assets/heart.svg";
 import StarSvg from "../assets/star.svg";
 import NotStarSvg from "../assets/notStar.svg";
 
+/** 요소를 보여주는 item 컴포넌트입니다. */
 const Item = ({
   type,
   title,
@@ -59,13 +60,21 @@ const Item = ({
 };
 
 Item.propTypes = {
+  /** item의 타입입니다. */
   type: PropTypes.oneOf(["confirm", "check", "star"]),
+  /** 아이템 제목부분입니다. */
   title: PropTypes.string,
+  /** 아이템에 들어갈 내용입니다. */
   description: PropTypes.string,
+  /** 키워드 부분입니다. */
   tag: PropTypes.arrayOf(PropTypes.string),
+  /** 좋아요의 수 입니다. */
   good: PropTypes.number,
+  /** 자식 속성입니다. 주로 이는 confirm 타입에서 버튼이 들어가는 부분입니다. */
   children: PropTypes.any,
+  /** 선택되었는지 확인하는 부분입니다. */
   checked: PropTypes.bool,
+  /** star 타입에서 별점에 역할 입니다. */
   score: PropTypes.number,
 };
 

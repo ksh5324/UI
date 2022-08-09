@@ -1,37 +1,3 @@
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-  var target = _objectWithoutPropertiesLoose(source, excluded);
-  var key, i;
-
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-
-  return target;
-}
-
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
 }
@@ -2874,77 +2840,90 @@ if (process.env.NODE_ENV === 'production') {
 }
 });
 
-var _excluded = ["primary", "backgroundColor", "size", "label"];
-/**
- * Primary UI component for user interaction
- */
-
 var Button = function Button(_ref) {
-  var primary = _ref.primary,
-      backgroundColor = _ref.backgroundColor,
+  var title = _ref.title,
+      variant = _ref.variant,
+      color = _ref.color,
       size = _ref.size,
-      label = _ref.label,
-      props = _objectWithoutProperties(_ref, _excluded);
-
-  var mode = primary ? "storybook-button--primary" : "storybook-button--secondary";
-  return /*#__PURE__*/react.createElement("button", Object.assign({
-    type: "button",
-    className: ["storybook-button", "storybook-button--".concat(size), mode].join(" "),
-    style: backgroundColor && {
-      backgroundColor: backgroundColor
-    }
-  }, props), label);
+      rounded = _ref.rounded,
+      shadow = _ref.shadow,
+      onClick = _ref.onClick;
+  return /*#__PURE__*/react.createElement("button", {
+    className: ["".concat(color), "".concat(variant), "".concat(size), "".concat(rounded && "rounded"), "".concat(shadow && "shadow")].join(" "),
+    onClick: onClick
+  }, title);
 };
 
 Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
-  size: "medium",
-  onClick: undefined
+  title: "button",
+  variant: "contained",
+  color: "normal",
+  size: "middle",
+  rounded: false,
+  shadow: false,
+  onClick: function onClick() {}
 };
 
-var Header = function Header(_ref) {
-  var user = _ref.user,
-      onLogin = _ref.onLogin,
-      onLogout = _ref.onLogout,
-      onCreateAccount = _ref.onCreateAccount;
-  return /*#__PURE__*/react.createElement("header", null, /*#__PURE__*/react.createElement("div", {
-    className: "wrapper"
-  }, /*#__PURE__*/react.createElement("div", null, /*#__PURE__*/react.createElement("svg", {
-    width: "32",
-    height: "32",
-    viewBox: "0 0 32 32",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, /*#__PURE__*/react.createElement("g", {
-    fill: "none",
-    fillRule: "evenodd"
-  }, /*#__PURE__*/react.createElement("path", {
-    d: "M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z",
-    fill: "#FFF"
-  }), /*#__PURE__*/react.createElement("path", {
-    d: "M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z",
-    fill: "#555AB9"
-  }), /*#__PURE__*/react.createElement("path", {
-    d: "M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z",
-    fill: "#91BAF8"
-  }))), /*#__PURE__*/react.createElement("h1", null, "Acme")), /*#__PURE__*/react.createElement("div", null, user ? /*#__PURE__*/react.createElement(Button, {
-    size: "small",
-    onClick: onLogout,
-    label: "Log out"
-  }) : /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(Button, {
-    size: "small",
-    onClick: onLogin,
-    label: "Log in"
-  }), /*#__PURE__*/react.createElement(Button, {
-    primary: true,
-    size: "small",
-    onClick: onCreateAccount,
-    label: "Sign up"
-  })))));
+var CheckSvg = "data:image/svg+xml,%3Csvg%20width%3D%2211%22%20height%3D%229%22%20viewBox%3D%220%200%2011%209%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M9.73549%200.219934C9.80374%200.1503%209.88519%200.0949814%209.97508%200.0572166C10.065%200.0194519%2010.1615%200%2010.259%200C10.3565%200%2010.453%200.0194519%2010.5429%200.0572166C10.6328%200.0949814%2010.7142%200.1503%2010.7825%200.219934C11.0685%200.508934%2011.0725%200.975934%2010.7925%201.26993L4.87949%208.25993C4.81236%208.33366%204.73089%208.3929%204.64007%208.43406C4.54925%208.47521%204.45099%208.4974%204.3513%208.49927C4.25161%208.50115%204.15258%208.48266%204.06028%208.44495C3.96798%208.40723%203.88435%208.35108%203.81449%208.27993L0.216492%204.63393C0.077729%204.49242%200%204.30213%200%204.10393C0%203.90574%200.077729%203.71545%200.216492%203.57393C0.284738%203.5043%200.36619%203.44898%200.45608%203.41122C0.54597%203.37345%200.642491%203.354%200.739992%203.354C0.837493%203.354%200.934014%203.37345%201.0239%203.41122C1.11379%203.44898%201.19525%203.5043%201.26349%203.57393L4.31549%206.66693L9.71549%200.241934C9.72171%200.234206%209.72839%200.226859%209.73549%200.219934Z%22%20fill%3D%22%231556F7%22%2F%3E%3C%2Fsvg%3E";
+
+var HeartSvg = "data:image/svg+xml,%3Csvg%20width%3D%2211%22%20height%3D%2210%22%20viewBox%3D%220%200%2011%2010%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0.5%203.00036V3.00027C0.499944%202.66736%200.565591%202.33789%200.69298%202.03117C0.820365%201.72446%201.00686%201.4468%201.24132%201.21429C1.47577%200.981791%201.75347%200.799095%202.05806%200.676624C2.36264%200.554158%202.68816%200.4943%203.01565%200.500427L3.01565%200.500572L3.02768%200.500507C3.423%200.498387%203.81439%200.581145%204.17598%200.743463C4.53757%200.905788%204.86128%201.14406%205.12544%201.44279L5.5%201.86635L5.87456%201.44279C6.13872%201.14406%206.46243%200.905788%206.82402%200.743463C7.18561%200.581145%207.577%200.498387%207.97232%200.500507L7.97232%200.500652L7.98435%200.500427C8.31184%200.4943%208.63736%200.554158%208.94194%200.676624C9.24653%200.799095%209.52423%200.981791%209.75868%201.21429C9.99314%201.4468%2010.1796%201.72446%2010.307%202.03117C10.4344%202.33789%2010.5001%202.66736%2010.5%203.00027V3.00036C10.5%204.2867%209.73973%205.47032%208.6387%206.6004C8.09437%207.15911%207.48531%207.68617%206.87961%208.19053C6.70826%208.33321%206.53599%208.47502%206.36547%208.61539C6.06735%208.86079%205.7746%209.10178%205.50154%209.33527C5.21385%209.08726%204.90438%208.83169%204.58957%208.5717C4.43452%208.44366%204.27818%208.31454%204.1225%208.18473C3.51657%207.67948%202.90729%207.153%202.36254%206.59519C1.2608%205.46704%200.5%204.28731%200.5%203.00036Z%22%20fill%3D%22%23FE8885%22%20stroke%3D%22%23FE8885%22%2F%3E%3C%2Fsvg%3E";
+
+var StarSvg = "data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M4.77462%207.30646L2.34162%208.52923L2.80129%205.96793L2.84945%205.69956L2.64993%205.51373L0.697868%203.69558L3.41421%203.31818L3.67084%203.28252L3.78969%203.05229L5.00008%200.707593L6.21047%203.05229L6.32932%203.28252L6.58596%203.31818L9.30182%203.69551L7.35018%205.51378L7.15072%205.69961L7.19888%205.96793L7.65863%208.52965L5.22359%207.30642L4.99909%207.19365L4.77462%207.30646ZM9.55168%203.46272L9.55142%203.46296L9.55168%203.46272ZM7.71762%208.85839C7.71762%208.85837%207.71762%208.85835%207.71761%208.85833L7.71762%208.85839Z%22%20fill%3D%22%23EFB305%22%20stroke%3D%22%23EFB305%22%2F%3E%3C%2Fsvg%3E";
+
+var NotStarSvg = "data:image/svg+xml,%3Csvg%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%2010%2010%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M4.77462%207.30646L2.34162%208.52923L2.80129%205.96793L2.84945%205.69956L2.64993%205.51373L0.697868%203.69558L3.41421%203.31818L3.67084%203.28252L3.78969%203.05229L5.00008%200.707593L6.21047%203.05229L6.32932%203.28252L6.58596%203.31818L9.30182%203.69551L7.35018%205.51378L7.15072%205.69961L7.19888%205.96793L7.65863%208.52965L5.22359%207.30642L4.99909%207.19365L4.77462%207.30646ZM9.55168%203.46272L9.55142%203.46296L9.55168%203.46272ZM7.71762%208.85839C7.71762%208.85837%207.71762%208.85835%207.71761%208.85833L7.71762%208.85839Z%22%20stroke%3D%22%23EFB305%22%2F%3E%3C%2Fsvg%3E";
+
+var Item = function Item(_ref) {
+  var type = _ref.type,
+      title = _ref.title,
+      description = _ref.description,
+      tag = _ref.tag,
+      good = _ref.good,
+      children = _ref.children,
+      checked = _ref.checked,
+      score = _ref.score;
+  return /*#__PURE__*/react.createElement(react.Fragment, null, type === "confirm" || type === "check" ? /*#__PURE__*/react.createElement("div", {
+    className: type
+  }, /*#__PURE__*/react.createElement("h2", {
+    className: "".concat(type, "__title")
+  }, title), type === "check" && checked && /*#__PURE__*/react.createElement("div", {
+    className: "".concat(type, "__check")
+  }, /*#__PURE__*/react.createElement("img", {
+    src: CheckSvg
+  })), /*#__PURE__*/react.createElement("p", {
+    className: "".concat(type, "__description")
+  }, description), /*#__PURE__*/react.createElement("ul", {
+    className: "".concat(type, "__tagsGood")
+  }, tag.map(function (v) {
+    return /*#__PURE__*/react.createElement("li", {
+      className: "".concat(type, "__tag"),
+      key: v
+    }, v);
+  }), /*#__PURE__*/react.createElement("li", {
+    className: "".concat(type, "__good")
+  }, good, " ", /*#__PURE__*/react.createElement("img", {
+    src: HeartSvg
+  }))), type === "confirm" && /*#__PURE__*/react.createElement("div", {
+    className: "".concat(type, "__child")
+  }, children)) : type === "star" ? /*#__PURE__*/react.createElement("div", {
+    className: type
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "".concat(type, "__container")
+  }, [1, 2, 3, 4, 5].map(function (v) {
+    return score >= v ? /*#__PURE__*/react.createElement("img", {
+      src: StarSvg
+    }) : /*#__PURE__*/react.createElement("img", {
+      src: NotStarSvg
+    });
+  })), /*#__PURE__*/react.createElement("div", {
+    className: "".concat(type, "__description")
+  }, description)) : /*#__PURE__*/react.createElement("div", null, "error"));
 };
 
-Header.defaultProps = {
-  user: null
+Item.defaultProps = {
+  type: "check",
+  title: "Item",
+  description: "description",
+  checked: false
 };
 
-export { Button, Header };
+export { Button, Item as Header };

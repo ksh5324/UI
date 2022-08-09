@@ -1,6 +1,6 @@
 {
   "name": "@ksh5324/cnsui",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "description": "Starter template to get up and running quickly with React and Storybook",
   "author": "Chromatic <https://chromatic.com/>",
   "module": "dist/index.js",
@@ -33,7 +33,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "init-msw": "msw init public/",
-    "publish": "publish --access=public"
+    "chromatic": "npx chromatic --project-token=2ff7771a88c2"
   },
   "eslintConfig": {
     "extends": [

@@ -1,0 +1,31 @@
+.itemList {
+  background: #ffffff;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: scroll;
+  position: relative;
+}
+
+.item-list__header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background-color: #ffffff;
+}
+.rounded {
+  border-radius: 15px;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  overflow: scroll;
+}

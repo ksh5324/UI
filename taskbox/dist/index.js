@@ -2929,4 +2929,44 @@ Item.defaultProps = {
   checked: false
 };
 
-export { Button, Item };
+var ItemList = function ItemList(_ref) {
+  var header = _ref.header,
+      children = _ref.children,
+      direction = _ref.direction,
+      padding = _ref.padding,
+      width = _ref.width,
+      height = _ref.height,
+      rounded = _ref.rounded,
+      elementGap = _ref.elementGap;
+  return /*#__PURE__*/react.createElement("div", {
+    style: {
+      width: width,
+      height: height,
+      paddingLeft: padding
+    },
+    className: "itemList ".concat(rounded ? "rounded" : "")
+  }, /*#__PURE__*/react.createElement("div", {
+    style: {
+      marginBottom: padding,
+      paddingTop: padding
+    },
+    className: "item-list__header"
+  }, header), /*#__PURE__*/react.createElement("div", {
+    className: "".concat(direction === "row" ? "row" : "column"),
+    style: {
+      gap: elementGap,
+      paddingTop: "5px"
+    }
+  }, children));
+};
+
+ItemList.defaultProps = {
+  width: "auto",
+  height: "auto",
+  padding: 0,
+  direction: "row",
+  rounded: false,
+  elementGap: "20px"
+};
+
+export { Button, Item, ItemList };

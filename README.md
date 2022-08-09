@@ -16,8 +16,14 @@
 
 ## 설치
 
-npm i @ksh5324/uitest  
-yarn add @ksh5324/uitest
+npm i @ksh5324/cnsui  
+yarn add @ksh5324/cnsui
+
+https://www.npmjs.com/package/@ksh5324/cnsui
+
+## docs
+
+https://62efecd1d7a33abd903ac013-zbtbhxmkec.chromatic.com/?path=/story/example-introduction--page
 
 ## 적용
 
